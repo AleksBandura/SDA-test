@@ -26,7 +26,6 @@ class index
     public function removingNumber($number)
     {
         return $this->smallNumbers -= $number;
-        return $this->smallNumbers -= $number;
     }
 
     public function getNumbers()

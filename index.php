@@ -6,15 +6,22 @@ class index
 {
     private $number,
             $bigNumbers,
-            $smallNumbers,
+            $smallNumbers = 0,
             $result = 0;
 
     public function __construct()
     {
-        if(isset($_POST['number']))
+
+        if(isset($_POST['number']) && $_POST['number'] >= 1000)
         {
             $this->number = $_POST['number'];
-            ($this->number >= 1000 ? $this->addingNumber($this->number) : $this->removingNumber($this->number));
+            $this->bigNumbers = $_POST['number'];
+            $this->addingNumber($this->number);
+        }
+        else
+        {
+            $this->number = $_POST['number'];
+            $this->removingNumber($this->number);
         }
     }
 

@@ -23,6 +23,8 @@ class index
             $this->number = $_POST['number'];
             $this->removingNumber($this->number);
         }
+
+        //($_POST['number'] >= 1000 ? $this->addingNumber($this->number) : $this->removingNumber($this->number));
     }
 
     public function addingNumber($number)
@@ -42,6 +44,7 @@ class index
     }
 
 }
+$object = new Index();
 ?>
 
 
@@ -55,16 +58,13 @@ class index
     <title>Numbers</title>
 </head>
 <body>
-    <form method="post" action="<?php $result?>">
+    <form method="post" action="<?php $object?>">
         <input type="number" name="number" placeholder="Введите число">
         <input type="submit" name="submit" />
     </form>
 
     <div style="margin-top: 15px;">
-        <?php
-            $result = new Index();
-            $result->getNumbers();
-        ?>
+        <?php $object->getNumbers(); ?>
     </div>
 </body>
 </html>
